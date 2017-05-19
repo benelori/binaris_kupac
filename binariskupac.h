@@ -5,10 +5,13 @@
 
 using namespace std;
 
-typedef struct kupac{
-    int n;
+typedef struct kupac {
+	int n;
 	int Tomb[100];
 	int KupacMeret;
+	void Beszur(int elem);
+	int Maximum(int A[]);
+	void TorolMaximum();
 };
 
 kupac K;
@@ -37,7 +40,7 @@ void MaxKupacRendez(kupac & K, int i){
 	if((jobb <= K.KupacMeret) && (K.Tomb[jobb] > K.Tomb[maximum]))
 		maximum = jobb;
 	if(maximum != i)
-        {
+	{
 		seged = K.Tomb[i];
 		K.Tomb[i] = K.Tomb[maximum];
 		K.Tomb[maximum] = seged;
@@ -63,6 +66,9 @@ void KupacRendezes(kupac & K){
 	}
 }
 
+void elemnoveles(int meret, int elem) {
+
+}
 
 void kupac::Beszur(int elem)
 //Uj ertek parameterkenti beszurasa
@@ -72,13 +78,15 @@ void kupac::Beszur(int elem)
 	elemnoveles(KupacMeret,elem);
 }
 
-int kupac::Maximum()
+int kupac::Maximum(int A[])
 //Kiirja a kupac legnagyobb elemet
 {
 	return A[1];
 }
-*/
 
+void MaxKupacRendez(int Tomb[], int size, int counter) {
+
+}
 
 void kupac::TorolMaximum()
 //Toroljuk a kupac legnagyobb elemet
@@ -90,7 +98,7 @@ void kupac::TorolMaximum()
 	{
 		maximum=Tomb[1];
 		Tomb[1]=Tomb[KupacMeret];
-        KupacMeret=KupacMeret - 1;
+		KupacMeret=KupacMeret - 1;
 		MaxKupacRendez(Tomb,KupacMeret,1);
 	}
 }
