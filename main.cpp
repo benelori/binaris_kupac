@@ -29,6 +29,13 @@ int x;
     KiirKupac(K);
     cout <<endl;
 
+    cout <<"Adja meg a torlendo elemet: ";
+    cin >>x;
+    Torol(x, K);
+    cout <<"Torles utani kupac-sorozat: "<< endl;
+    KiirKupac(K);
+    cout <<endl;
+
     KupacRendezes(K);
     cout << "A rendezett sorozat:" << endl;
     KiirKupac(K);

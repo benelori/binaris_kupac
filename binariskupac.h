@@ -89,6 +89,26 @@ void Beszur(int ertek, kupac &K) {
     //  }
 }
 
+void Torol(int ertek, kupac &K) {
+    int seged;
+
+    int utolsoElemIndex = K.n;
+
+    for (int i = 1; i < K.n; i++) {
+        if (K.Tomb[i] == ertek) {
+            seged = K.Tomb[utolsoElemIndex];
+            K.Tomb[utolsoElemIndex] = K.Tomb[i];
+            K.Tomb[i] = seged;
+        }
+    }
+
+    K.KupacMeret = K.n -1;
+    K.n = K.n -1;
+
+    for (int i = K.KupacMeret / 2; i >= 1; i--)
+        MaxKupacRendez(K, i);
+}
+
 
 void KupacRendezes(kupac &K) {
 // Rendezzuk a kupacot
