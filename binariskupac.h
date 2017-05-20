@@ -6,64 +6,66 @@
 using namespace std;
 
 typedef struct kupac {
-	int Tomb[100];
-	int KupacMeret;
+    int n;
+    int Tomb[100];
+    int KupacMeret;
+
     int Maximum(int A[]);
-	void Beszur(int elem);
-	void TorolMaximum();
+
+    void Beszur(int elem);
+
+    void TorolMaximum();
 };
 
 kupac K;
 
 
-void MaxKupacRendez(kupac & K, int i){
+void MaxKupacRendez(kupac &K, int i) {
 // Rendezzuk a sorozatot, ugy, hogy minden elem utan, kisebb vagy egyenlo ertek kovetkezzen
-	int bal;
-	int jobb;
-	int maximum;
-	int seged;
-	bal = 2 * i;
-	jobb = (2 * i) + 1;
-	if ((bal <= K.KupacMeret) && (K.Tomb[bal] > K.Tomb[i]))
-		maximum = bal;
-	else
-		maximum = i;
-	if((jobb <= K.KupacMeret) && (K.Tomb[jobb] > K.Tomb[maximum]))
-		maximum = jobb;
-	if(maximum != i)
-	{
-		seged = K.Tomb[i];
-		K.Tomb[i] = K.Tomb[maximum];
-		K.Tomb[maximum] = seged;
-		MaxKupacRendez(K, maximum);
-	}
+    int bal;
+    int jobb;
+    int maximum;
+    int seged;
+    bal = 2 * i;
+    jobb = (2 * i) + 1;
+    if ((bal <= K.KupacMeret) && (K.Tomb[bal] > K.Tomb[i]))
+        maximum = bal;
+    else
+        maximum = i;
+    if ((jobb <= K.KupacMeret) && (K.Tomb[jobb] > K.Tomb[maximum]))
+        maximum = jobb;
+    if (maximum != i) {
+        seged = K.Tomb[i];
+        K.Tomb[i] = K.Tomb[maximum];
+        K.Tomb[maximum] = seged;
+        MaxKupacRendez(K, maximum);
+    }
 }
 
 
-kupac KupacEpites(int Tomb[],int n){
+kupac KupacEpites(int Tomb[], int n) {
 // A Tombot atalakitjuk kupacca
-	for (int i= 0; i<n; i++)
-        K.Tomb[i]=Tomb[i];
+    for (int i = 0; i < n; i++)
+        K.Tomb[i + 1] = Tomb[i];
 
-    K.KupacMeret=n;
+    K.KupacMeret = n;
+    K.n = n;
 
-
-	for(int i = K.KupacMeret/2; i >= 1; i--)
-		MaxKupacRendez(K, i);
-		return K;
+    for (int i = K.KupacMeret / 2; i >= 1; i--)
+        MaxKupacRendez(K, i);
+    return K;
 }
 
 
-void KupacRendezes(kupac & K){
+void KupacRendezes(kupac &K) {
 // Rendezzuk a kupacot
-	int seged;
-	for(int i = K.KupacMeret; i >= 2; i--){
-		seged = K.Tomb[1];
-		K.Tomb[1] = K.Tomb[i];
-		K.Tomb[i] = seged;
-		K.KupacMeret=K.KupacMeret - 1;
-		MaxKupacRendez(K,1);
-	}
+    for (int i = K.KupacMeret; i >= 2; i--) {
+        seged = K.Tomb[1];
+        K.Tomb[1] = K.Tomb[i];
+        K.Tomb[i] = seged;
+        K.KupacMeret = K.KupacMeret - 1;
+        MaxKupacRendez(K, 1);
+    }
 }
 
 /*void elemnoveles(int meret, int elem) {
@@ -104,9 +106,11 @@ void kupac::TorolMaximum()
 }
 */
 
-void KiirKupac(kupac K){
-for (int i=0; i < K.KupacMeret; i++){
-    cout << K.Tomb[i]<< " ";
-}
-cout<< endl;
+void KiirKupac(kupac K) {
+    for (int i = 1; i <= K.n; i++) {
+        int seged = K.Tomb[i];
+        cout << K.Tomb[i] << " ";
+    }
+
+    cout << endl;
 }

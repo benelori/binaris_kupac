@@ -5,23 +5,24 @@
 
 using namespace std;
 
-int BeolvasTombMeret(){
+int BeolvasTombMeret() {
 // Megadjuk a sorozat elemeinek szamat
     int n;
-    cout << "Adja meg az n erteket, n: "; cin >> n;
+    cout << "Adja meg az n erteket, n: ";
+    cin >> n;
     return n;
 }
 
-void BeolvasTombElemek(int BeTomb[], int n){
+void BeolvasTombElemek(int BeTomb[], int n) {
     //Beolvassuk az elemeket
     cout << endl << "A beolvasott szamok sorozata: ";
     for (int i = 0; i < n; i++)
         cin >> BeTomb[i];
 }
 
-void Kiir(int Tomb[], int n){
+void Kiir(int Tomb[], int n) {
 // Kiirjuk a tombot
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         cout << Tomb[i] << " ";
     cout << endl;
 }

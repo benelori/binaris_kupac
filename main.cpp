@@ -7,26 +7,26 @@ int main(){
 kupac K;
 int Tomb[20];
 
-	cout << "Beolvassuk a szamokat:" << endl;
+    cout << "Beolvassuk a szamokat:" << endl;
 
- int n = BeolvasTombMeret();
+    int n = BeolvasTombMeret();
 
     BeolvasTombElemek(Tomb, n);
     cout << "A beolvasott szamok sorozata:" << endl;
-    Kiir(Tomb,n);
+    Kiir(Tomb, n);
     cout << endl;
 
-   K = KupacEpites(Tomb, n);
+    K = KupacEpites(Tomb, n);
     cout << "A kupac-sorozat:" << endl;
     KiirKupac(K);
     cout << endl;
 
-  /*  KupacRendezes(K);
+    KupacRendezes(K);
     cout << "A rendezett sorozat:" << endl;
-    Kiir(K);
+    KiirKupac(K);
     cout << endl;
-
-   // cout << "A legnagyobb elem:" << maximum<< endl;
+/*
+  // cout << "A legnagyobb elem:" << maximum<< endl;
 */
 return 1;
 }
