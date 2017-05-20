@@ -23,6 +23,6 @@ kupac K;
     cout << endl;
 
    // cout << "A legnagyobb elem:" << maximum<< endl;
-
+//8
 return 1;
 }
