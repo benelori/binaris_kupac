@@ -1,0 +1,22 @@
+1. Az elso forduloban a parok neve es a pontszama letezik
+
+e.x.
+
+1. Tesztallomany
+
+par1    2
+par2    3
+par3    4
+
+2. Menu
+
+Beolvasas parok szama
+Beolvasas par/pontszam
+
+A nev es a pontszamok kulon tombben lesznek
+
+Ahol a kupac.Tomb-ben elemek cserelodnek, a nev tombben is el kell vegezni a cserelest, hogy a Nev tomb tudja kovetni, hogy
+milyen cserek mentek vegbe.
+
+2. A masodik fordulohoz kivesszuk az elso k versenyzot es beszurassal felepitunk egy uj kupacot
+3. Ez az uj kupac mar sorrendben lesz, ugy hogy rendezest nem kell mar ra vegezni (asszem :D )
