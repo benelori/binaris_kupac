@@ -6,7 +6,6 @@
 using namespace std;
 
 typedef struct kupac {
-	int n;
 	int Tomb[100];
 	int KupacMeret;
     int Maximum(int A[]);
@@ -16,19 +15,6 @@ typedef struct kupac {
 
 kupac K;
 
-int BeolvasTombMeret(){
-// Megadjuk a sorozat elemeinek szamat
-int n;
-	cout << "Adja meg az n erteket, n: "; cin >> n;
-	return n;
-}
-
-void BeolvasTombElemek(int BeTomb[], int n){
-    //Beolvassuk az elemeket
-cout << endl << "A beolvasott szamok sorozata: ";
-	for (int i = 1; i <= n; i++)
-		cin >> BeTomb[i];
-}
 
 void MaxKupacRendez(kupac & K, int i){
 // Rendezzuk a sorozatot, ugy, hogy minden elem utan, kisebb vagy egyenlo ertek kovetkezzen
@@ -53,11 +39,20 @@ void MaxKupacRendez(kupac & K, int i){
 	}
 }
 
-void KupacEpites(kupac & K){
-// "A" tombot atalakitjuk kupacca
+
+kupac KupacEpites(int Tomb[],int n){
+// A Tombot atalakitjuk kupacca
+	for (int i= 0; i<n; i++)
+        K.Tomb[i]=Tomb[i];
+
+    K.KupacMeret=n;
+
+
 	for(int i = K.KupacMeret/2; i >= 1; i--)
 		MaxKupacRendez(K, i);
+		return K;
 }
+
 
 void KupacRendezes(kupac & K){
 // Rendezzuk a kupacot
@@ -109,8 +104,15 @@ void kupac::TorolMaximum()
 }
 */
 void Kiir(int Tomb[], int n){
-// Kiirjuk a kupacot
-	for(int i = 1; i <= n; i++)
+// Kiirjuk a tombot
+	for(int i = 0; i < n; i++)
 		cout << Tomb[i] << " ";
 	cout << endl;
+}
+
+void KiirKupac(kupac K){
+for (int i=0; i < K.KupacMeret; i++){
+    cout << K.Tomb[i]<< " ";
+}
+cout<< endl;
 }

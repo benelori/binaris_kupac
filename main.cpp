@@ -2,6 +2,21 @@
 //BINARIS KUPAC - main
 #include "binariskupac.h"
 
+int BeolvasTombMeret(){
+// Megadjuk a sorozat elemeinek szamat
+int n;
+	cout << "Adja meg az n erteket, n: "; cin >> n;
+	return n;
+}
+
+void BeolvasTombElemek(int BeTomb[], int n){
+    //Beolvassuk az elemeket
+cout << endl << "A beolvasott szamok sorozata: ";
+	for (int i = 0; i < n; i++)
+		cin >> BeTomb[i];
+}
+
+
 int main(){
 kupac K;
 int Tomb[20];
@@ -15,12 +30,12 @@ int Tomb[20];
     Kiir(Tomb,n);
     cout << endl;
 
-  /*  KupacEpites(K);
+   K = KupacEpites(Tomb, n);
     cout << "A kupac-sorozat:" << endl;
-    Kiir(K);
+    KiirKupac(K);
     cout << endl;
 
-    KupacRendezes(K);
+  /*  KupacRendezes(K);
     cout << "A rendezett sorozat:" << endl;
     Kiir(K);
     cout << endl;
