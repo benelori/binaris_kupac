@@ -83,6 +83,7 @@ void Beszur(int ertek, kupac &K) {
            // cout<<"A kupac telitett";
      // else {
             K.n=K.n+1;
+            K.KupacMeret=K.KupacMeret+1;
             K.Tomb[K.n] = ertek;
             ElemRendezes(K.n,K);
     //  }
