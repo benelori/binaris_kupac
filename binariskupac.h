@@ -57,6 +57,8 @@ kupac KupacEpites(int Tomb[], int n) {
     return K;
 }
 
+
+
 int KapSzuloIndex(int index){
     div_t y;
     y=div(index,2);
@@ -78,6 +80,8 @@ void ElemRendezes(int index, kupac &K) {
       }
 }
 
+
+
 void Beszur(int ertek, kupac &K) {
      // if (K.n == "ertek")
            // cout<<"A kupac telitett";
@@ -88,6 +92,8 @@ void Beszur(int ertek, kupac &K) {
             ElemRendezes(K.n,K);
     //  }
 }
+
+
 
 void Torol(int ertek, kupac &K) {
     int seged;
@@ -110,6 +116,7 @@ void Torol(int ertek, kupac &K) {
 }
 
 
+
 void KupacRendezes(kupac &K) {
 // Rendezzuk a kupacot
 int seged;
@@ -123,45 +130,21 @@ int seged;
 }
 
 
-/*void elemnoveles(int meret, int elem) {
 
+void KiirMax(kupac &K){
+//Kiirjuk a kupac legnagyobb elemet
+    return K.Tomb[1];
 }
 
-void kupac::Beszur(int elem)
-//Uj ertek parameterkenti beszurasa
-{
-	KupacMeret=KupacMeret+1;
-	Tomb[KupacMeret]=33;
-	elemnoveles(KupacMeret,elem);
-}
-
-int kupac::Maximum(int A[])
-//Kiirja a kupac legnagyobb elemet
-{
-	return A[1];
-}
-
-void MaxKupacRendez(int Tomb[], int size, int counter) {
-
-}
-
-void kupac::TorolMaximum()
+void TorolMaximum(kupac &K){
 //Toroljuk a kupac legnagyobb elemet
-{
-	int maximum;
-	if (1 > KupacMeret)
-		cout<<"Nincs eleg elem a kupacban";
-	else
-	{
-		maximum=Tomb[1];
-		Tomb[1]=Tomb[KupacMeret];
-		KupacMeret=KupacMeret - 1;
-		MaxKupacRendez(Tomb,KupacMeret,1);
-	}
+	Torol(K.Tomb[1], K);
 }
-*/
+
+
 
 void KiirKupac(kupac K) {
+    //Kiirja a kupacot
     for (int i = 1; i <= K.n; i++) {
         int seged = K.Tomb[i];
         cout << K.Tomb[i] << " ";
