@@ -36,10 +36,14 @@ void MaxKupacRendez(kupac &K, int i) {
     if ((jobb <= K.KupacMeret) && (K.Tomb[jobb] > K.Tomb[maximum]))
         maximum = jobb;
     if (maximum != i) {
-        seged = K.Tomb[i];
-        K.Tomb[i] = K.Tomb[maximum];
+        seged = K.Tomb[i]; // seged = nevTomb[i];
+        K.Tomb[i] = K.Tomb[maximum]; //nevTomb[1] = nevTomb[maximum]
         K.Tomb[maximum] = seged;
-        MaxKupacRendez(K, maximum);
+
+
+
+            //nevTomb[maximum]= seged;
+        MaxKupacRendez(K, maximum); //MaxKupac
     }
 }
 
@@ -76,6 +80,9 @@ void ElemRendezes(int index, kupac &K) {
                   K.Tomb[SzuloIndex] = K.Tomb[index];
                   K.Tomb[index] = seged;
                   ElemRendezes(SzuloIndex, K);
+                  //seged=nevTomb[SzuloIndex];
+                  //nevTomb[SzuloIndex]= nevTomb[index];
+                  //nevTomv[index]=seged;
             }
       }
 }
@@ -90,6 +97,9 @@ void Beszur(int ertek, kupac &K) {
             K.KupacMeret=K.KupacMeret+1;
             K.Tomb[K.n] = ertek;
             ElemRendezes(K.n,K);
+            //nevTomb[n+1]="uj nev"
+            //
+            //
     //  }
 }
 
@@ -152,3 +162,6 @@ void KiirKupac(kupac K) {
 
     cout << endl;
 }
+
+//A K VERSENYZOT, index alapjan veszem ki. For i=K.n-k; K.n, i++;
+//uj kupac "donto/tovabbjuto", inserttel epitem
