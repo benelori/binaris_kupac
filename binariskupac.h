@@ -9,20 +9,25 @@ typedef struct kupac {
 	int n;
 	int Tomb[100];
 	int KupacMeret;
+    int Maximum(int A[]);
 	void Beszur(int elem);
-	int Maximum(int A[]);
 	void TorolMaximum();
 };
 
 kupac K;
 
-void Beolvas(kupac & K){
-// Beolvassuk a sorozatot
-	cout << "Adja meg az n erteket, n: "; cin >> K.n;
-	cout << endl << "A beolvasott szamok sorozata: ";
-	for (int i = 1; i <= K.n; i++)
-		cin >> K.Tomb[i];
-	K.KupacMeret = K.n;
+int BeolvasTombMeret(){
+// Megadjuk a sorozat elemeinek szamat
+int n;
+	cout << "Adja meg az n erteket, n: "; cin >> n;
+	return n;
+}
+
+void BeolvasTombElemek(int BeTomb[], int n){
+    //Beolvassuk az elemeket
+cout << endl << "A beolvasott szamok sorozata: ";
+	for (int i = 1; i <= n; i++)
+		cin >> BeTomb[i];
 }
 
 void MaxKupacRendez(kupac & K, int i){
@@ -66,7 +71,7 @@ void KupacRendezes(kupac & K){
 	}
 }
 
-void elemnoveles(int meret, int elem) {
+/*void elemnoveles(int meret, int elem) {
 
 }
 
@@ -102,10 +107,10 @@ void kupac::TorolMaximum()
 		MaxKupacRendez(Tomb,KupacMeret,1);
 	}
 }
-
-void kiir(kupac K){
+*/
+void Kiir(int Tomb[], int n){
 // Kiirjuk a kupacot
-	for(int i = 1; i <= K.n; i++)
-		cout << K.Tomb[i] << " ";
+	for(int i = 1; i <= n; i++)
+		cout << Tomb[i] << " ";
 	cout << endl;
 }
