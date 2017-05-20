@@ -6,6 +6,7 @@
 int main(){
 kupac K;
 int Tomb[20];
+int x;
 
     cout << "Beolvassuk a szamokat:" << endl;
 
@@ -21,15 +22,18 @@ int Tomb[20];
     KiirKupac(K);
     cout << endl;
 
+    cout <<"Adja meg a beszurando elemet: ";
+    cin >>x;
+    Beszur(x, K);
+    cout <<"Beszuras utani kupac-sorozat: "<< endl;
+    KiirKupac(K);
+    cout <<endl;
+
     KupacRendezes(K);
     cout << "A rendezett sorozat:" << endl;
     KiirKupac(K);
     cout << endl;
 
-    Beszur(-1, K);
-    cout <<"Beszuras utani kupac-sorozat: "<< endl;
-    KiirKupac(K);
-    cout <<endl;
 
   // cout << "A legnagyobb elem:" << maximum<< endl;
 
