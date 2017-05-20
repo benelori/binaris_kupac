@@ -131,7 +131,7 @@ int seged;
 
 
 
-void KiirMax(kupac &K){
+int KiirMax(kupac &K){
 //Kiirjuk a kupac legnagyobb elemet
     return K.Tomb[1];
 }

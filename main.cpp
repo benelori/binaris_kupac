@@ -2,44 +2,32 @@
 //BINARIS KUPAC - main
 #include "binariskupac.h"
 #include "kupacio.h"
+#include "menu.h"
+#include "tesztallomany.h"
 
 int main(){
-kupac K;
-int Tomb[20];
-int x;
 
-    cout << "Beolvassuk a szamokat:" << endl;
+    int valasztas;
+    cout << "1. Tesztallomany" << endl;
+    cout << "2. Menu" << endl;
+    cout << "Honnan futattod az aplikaciot" << endl;
 
-    int n = BeolvasTombMeret();
+    cin >> valasztas;
 
-    BeolvasTombElemek(Tomb, n);
-    cout << "A beolvasott szamok sorozata:" << endl;
-    Kiir(Tomb, n);
-    cout << endl;
+    switch(valasztas)
+        {
+            case 1: {
 
-    K = KupacEpites(Tomb, n);
-    cout << "A kupac-sorozat:" << endl;
-    KiirKupac(K);
-    cout << endl;
+                break;
+            }
 
-    cout <<"Adja meg a beszurando elemet: ";
-    cin >>x;
-    Beszur(x, K);
-    cout <<"Beszuras utani kupac-sorozat: "<< endl;
-    KiirKupac(K);
-    cout <<endl;
+            case 2: {
+                menu();
+                break;
+            }
 
-    cout <<"Adja meg a torlendo elemet: ";
-    cin >>x;
-    Torol(x, K);
-    cout <<"Torles utani kupac-sorozat: "<< endl;
-    KiirKupac(K);
-    cout <<endl;
-
-    KupacRendezes(K);
-    cout << "A rendezett sorozat:" << endl;
-    KiirKupac(K);
-    cout << endl;
+            default: return 1;
+        }
 
 
   // cout << "A legnagyobb elem:" << maximum<< endl;
