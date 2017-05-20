@@ -25,8 +25,13 @@ int Tomb[20];
     cout << "A rendezett sorozat:" << endl;
     KiirKupac(K);
     cout << endl;
-/*
+
+    Beszur(-1, K);
+    cout <<"Beszuras utani kupac-sorozat: "<< endl;
+    KiirKupac(K);
+    cout <<endl;
+
   // cout << "A legnagyobb elem:" << maximum<< endl;
-*/
+
 return 1;
 }

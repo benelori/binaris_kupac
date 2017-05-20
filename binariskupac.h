@@ -2,6 +2,7 @@
 //BINARIS KUPAC - header file
 
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -59,6 +60,7 @@ kupac KupacEpites(int Tomb[], int n) {
 
 void KupacRendezes(kupac &K) {
 // Rendezzuk a kupacot
+int seged;
     for (int i = K.KupacMeret; i >= 2; i--) {
         seged = K.Tomb[1];
         K.Tomb[1] = K.Tomb[i];
@@ -68,6 +70,37 @@ void KupacRendezes(kupac &K) {
     }
 }
 
+
+int KapSzuloIndex(int index){
+    div_t y;
+    y=div(index,2);
+        return y.quot;
+    }
+
+void ElemRendezes(int index, kupac &K) {
+      int SzuloIndex;
+      int seged;
+      int x=0;
+      if (index != 1) {
+            SzuloIndex = KapSzuloIndex(index);
+            if (K.Tomb[SzuloIndex] > K.Tomb[index]) {
+                  seged = K.Tomb[SzuloIndex];
+                  K.Tomb[SzuloIndex] = K.Tomb[index];
+                  K.Tomb[index] = seged;
+                  ElemRendezes(SzuloIndex, K);
+            }
+      }
+}
+
+void Beszur(int ertek, kupac &K) {
+     // if (K.n == 5)
+           // cout<<"A kupac telitett";
+     // else {
+            K.n=K.n+1;
+            K.Tomb[K.n] = ertek;
+            ElemRendezes(K.n,K);
+    //  }
+}
 /*void elemnoveles(int meret, int elem) {
 
 }
