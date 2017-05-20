@@ -103,12 +103,6 @@ void kupac::TorolMaximum()
 	}
 }
 */
-void Kiir(int Tomb[], int n){
-// Kiirjuk a tombot
-	for(int i = 0; i < n; i++)
-		cout << Tomb[i] << " ";
-	cout << endl;
-}
 
 void KiirKupac(kupac K){
 for (int i=0; i < K.KupacMeret; i++){
