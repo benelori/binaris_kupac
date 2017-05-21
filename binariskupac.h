@@ -7,7 +7,8 @@
 using namespace std;
 
 typedef struct kupac {
-    int n;
+    //lesz egy kupac strukturank, amivel dolgozunk
+    int n;      //a tomb merete
     int Tomb[100];
     int KupacMeret;
 
@@ -40,8 +41,6 @@ void MaxKupacRendez(kupac &K, int i) {
         K.Tomb[i] = K.Tomb[maximum]; //nevTomb[1] = nevTomb[maximum]
         K.Tomb[maximum] = seged;
 
-
-
             //nevTomb[maximum]= seged;
         MaxKupacRendez(K, maximum); //MaxKupac
     }
@@ -64,12 +63,16 @@ kupac KupacEpites(int Tomb[], int n) {
 
 
 int KapSzuloIndex(int index){
+    //szuloindexet keresunk, az ismert keplet alapjan
     div_t y;
     y=div(index,2);
+    //osztja a szamot 2-vel
         return y.quot;
+        //az egesz reszet tartja meg
     }
 
 void ElemRendezes(int index, kupac &K) {
+    //Novekvo sorrendbe rendezi a kupac elemeit
       int SzuloIndex;
       int seged;
       int x=0;
@@ -90,6 +93,7 @@ void ElemRendezes(int index, kupac &K) {
 
 
 void Beszur(int ertek, kupac &K) {
+    //Beszurunk egy altalunk valasztott elemet a kupacba
      // if (K.n == "ertek")
            // cout<<"A kupac telitett";
      // else {
@@ -98,14 +102,15 @@ void Beszur(int ertek, kupac &K) {
             K.Tomb[K.n] = ertek;
             ElemRendezes(K.n,K);
             //nevTomb[n+1]="uj nev"
-            //
-            //
+            //nev
+            //nev
     //  }
 }
 
 
 
 void Torol(int ertek, kupac &K) {
+    //Torol egy altalunk valasztott elemet, ha ez megtalalhato a szamok kozott
     int seged;
 
     int utolsoElemIndex = K.n;
